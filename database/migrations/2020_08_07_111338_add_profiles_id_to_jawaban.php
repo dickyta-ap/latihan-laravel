@@ -14,7 +14,7 @@ class AddProfilesIdToJawaban extends Migration
     public function up()
     {
         Schema::table('jawaban', function (Blueprint $table) {
-            $table->unsignedBigInteger('profiles_id');    
+            $table->unsignedBigInteger('profiles_id')->nullable();    
             $table->foreign('profiles_id')->references('id')->on('profiles');
         });
     }

@@ -14,7 +14,7 @@ class AddJawabanIdToKomentarJawaban extends Migration
     public function up()
     {
         Schema::table('komentar_jawaban', function (Blueprint $table) {
-            $table->unsignedBigInteger('jawaban_id');    
+            $table->unsignedBigInteger('jawaban_id')->nullable();    
             $table->foreign('jawaban_id')->references('id')->on('jawaban');
         });
     }
